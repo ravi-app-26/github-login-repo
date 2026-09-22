@@ -12,7 +12,7 @@ app.use(session({
 
 app.get("/", (req, res) => {
   if (req.session.user)
-    return res.send(`Hello this is i am how are ${req.session.user.login} <a href="/logout">Logout</a>`);
+    return res.send(`Hello is${req.session.user.login} <a href="/logout">Logout</a>`);
 
   res.send(`<a href="/auth/github">Login with GitHub</a>`);
 });
