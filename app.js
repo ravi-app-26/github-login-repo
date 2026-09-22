@@ -26,8 +26,9 @@ app.get("/auth/github", (req, res) => {
 
 //after login runs that blocks
 app.get("/auth/github/callback", async (req, res) => {
-  const r = await fetch("https://github.com/oauth/access_token", {
+  const r = await fetch("https://github.com/login/oauth/access_token", {
     method: "POST",
+    method: "GET",
     headers: { Accept: "application/json" },
     body: JSON.stringify({
       client_id: process.env.GITHUB_CLIENT_ID,//req kis owth app ka hai 
