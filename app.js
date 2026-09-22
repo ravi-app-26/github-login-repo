@@ -26,7 +26,7 @@ app.get("/auth/github", (req, res) => {
 
 //after login runs that blocks
 app.get("/auth/github/callback", async (req, res) => {
-  const r = await fetch("https://github.com/login/oauth/access_token", {
+  const r = await fetch("https://github.com/oauth/access_token", {
     method: "POST",
     headers: { Accept: "application/json" },
     body: JSON.stringify({
