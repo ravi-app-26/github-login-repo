@@ -28,7 +28,6 @@ app.get("/auth/github", (req, res) => {
 app.get("/auth/github/callback", async (req, res) => {
   const r = await fetch("https://github.com/login/oauth/access_token", {
     method: "POST",
-    method: "GET",
     headers: { Accept: "application/json" },
     body: JSON.stringify({
       client_id: process.env.GITHUB_CLIENT_ID,//req kis owth app ka hai 
@@ -53,4 +52,6 @@ app.get("/logout", (req, res) => {
   req.session.destroy(() => res.redirect("/"));
 });
 
-app.listen(3000, () => console.log("http://localhost:3000"));
+app.listen(5000, () => {
+  console.log("Server running on port 5000");
+});
